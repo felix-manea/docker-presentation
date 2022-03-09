@@ -35,7 +35,12 @@ docker rm docker-presentation-container
 docker logs docker-presentation-container
 ```
 
-## Get inside container
+## Get inside container (without a service name)
+```
+docker exec -it docker-presentation-container sh
+```
+
+## Get inside container (using a service name)
 ```
 docker-compose exec docker-presentation-container bash
 ```
