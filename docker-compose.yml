@@ -1,0 +1,18 @@
+version: "3.8"
+networks:
+  default:
+    name: internal-network
+    driver: bridge
+services:
+  php-service:
+    container_name: php-container
+    image: php-image:latest
+    environment:
+      - DEBUG=true
+    build:
+      context: ./
+      dockerfile: for-docker-compose.Dockerfile
+    ports:
+      - '8080:80'
+    volumes:
+      - './src:/var/www/html'

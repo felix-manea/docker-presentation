@@ -2,12 +2,12 @@
 
 ## Build image
 ```
-docker build -t=docker-presentation-image .
+docker build -t=php-image .
 ```
 
 ## Run image into a container
 ```
-docker run --name=docker-presentation-container -p 8080:80 --rm docker-presentation-image
+docker run --name=php-container -p 8080:80 --rm php-image
 ```
 
 ## Show running containers
@@ -22,26 +22,26 @@ docker ps
 
 ## Stop container
 ```
-docker stop docker-presentation-container
+docker stop php-container
 ```
 
 ## Remove container
 ```
-docker rm docker-presentation-container
+docker rm php-container
 ```
 
 ## View container logs
 ```
-docker logs docker-presentation-container
+docker logs php-container
 ```
 
 ## Get inside container (without a service name)
 ```
-docker exec -it docker-presentation-container sh
+docker exec -it php-container sh
 ```
 
 ## Get inside container (using a service name)
 ```
-docker-compose exec docker-presentation-container bash
+docker-compose exec php-service bash
 ```
 
