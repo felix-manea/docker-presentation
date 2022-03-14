@@ -18,8 +18,8 @@ services:
       MYSQL_PASSWORD: crm_pass
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - ./dump:/docker-entrypoint-initdb.d
-      - ./conf:/etc/mysql/conf.d
-      - ./data/mysql:/var/lib/mysql
+      - ./mysql/dump:/docker-entrypoint-initdb.d
+      - ./mysql/conf:/etc/mysql/conf.d
+      - ./mysql/data:/var/lib/mysql
     networks:
       - default
