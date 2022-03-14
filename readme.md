@@ -1,47 +1,21 @@
-# Commands
+# docker-lamp
 
-## Build image
-```
-docker build -t=php-image .
-```
+Docker example with Apache, MySql 8.0, PhpMyAdmin and Php
 
-## Run image into a container
-```
-docker run --name=php-container -p 8080:80 --rm php-image
-```
+- You can use MariaDB 10.1 if you checkout to the tag `mariadb-10.1` - contribution made by [luca-vercelli](https://github.com/luca-vercelli)
+- You can use MySql 5.7 if you checkout to the tag `mysql5.7`
 
-## Show running containers
+I use docker-compose as an orchestrator. To run these containers:
+
 ```
-docker ps
+docker-compose up -d
 ```
 
-## Show all containers (running + stopped)
-```
-docker ps
-```
+Open phpmyadmin at [http://localhost:8000](http://localhost:8000)
+Open web browser to look at a simple php example at [http://localhost:8001](http://localhost:8001)
 
-## Stop container
-```
-docker stop php-container
-```
+Run mysql client:
 
-## Remove container
-```
-docker rm php-container
-```
+- `docker-compose exec db mysql -u root -p` 
 
-## View container logs
-```
-docker logs php-container
-```
-
-## Get inside container (without a service name)
-```
-docker exec -it php-container sh
-```
-
-## Get inside container (using a service name)
-```
-docker-compose exec php-service bash
-```
-
+Enjoy !

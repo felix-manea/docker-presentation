@@ -1,18 +1,25 @@
-version: "3.8"
-networks:
-  default:
-    name: internal-network
-    driver: bridge
+version: "3.1"
 services:
-  php-service:
-    container_name: php-container
-    image: php-image:latest
-    environment:
-      - DEBUG=true
-    build:
-      context: ./
-      dockerfile: for-docker-compose.Dockerfile
+  www:
+    build: .
     ports:
-      - '8080:80'
+      - "8080:80"
     volumes:
-      - './src:/var/www/html'
+      - ./www:/var/www/html/
+    networks:
+      - default
+  db:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: crm_app
+      MYSQL_USER: crm_user
+      MYSQL_PASSWORD: crm_pass
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./dump:/docker-entrypoint-initdb.d
+      - ./conf:/etc/mysql/conf.d
+      - ./data/mysql:/var/lib/mysql
+    networks:
+      - default
