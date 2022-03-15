@@ -2,7 +2,7 @@ version: "3.1"
 services:
   www:
     build:
-      context: ./php/docker
+      context: ./php
       dockerfile: Dockerfile
     ports:
       - "8080:80"
@@ -12,8 +12,6 @@ services:
       - default
   db:
     image: mysql:8.0
-    ports:
-      - "3306:3306"
     environment:
       MYSQL_DATABASE: crm_app
       MYSQL_USER: crm_user
