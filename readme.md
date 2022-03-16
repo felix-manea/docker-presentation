@@ -2,9 +2,13 @@
 
 These files here will give you a starting point into your journey experience.
 
+The presentation can be found [here](https://docs.google.com/presentation/d/1G3iEeR8QGld2smck6yoGlH2howC3NmzLyclCQjBocTU/edit?usp=sharing). At the moment its in romanian, but will create an english version soon.
+
 ## Docker-compose commands
 
 This section describes how to start and stop everything with `docker-compose`.
+
+**Note:** Run commands from the dir where `docker-compose.yml` is found.
 
 ### Create and start everything (network, containers, etc.)
 ```
@@ -18,6 +22,8 @@ docker-compose down -v
 ## Docker commands
 
 This section describes all the commands that you need to run to obtain the above result, without using any `docker-compose.yml` file.
+
+**Note:** Run commands from the dir where `docker-compose.yml` is found.
 
 ### Create and start everything
 
@@ -88,47 +94,47 @@ docker network rm crm-network
 
 Here you can find a list of useful commands that may help you doing various operations. For more information you can also check docker reference, link [here](https://docs.docker.com/reference/).
 
-### Build the php image
+Build the php image
 ```
 docker build -t=php-image .
 ```
 
-### Run the php image into a container
+Run the php image into a container
 ```
 docker run --name=php-container -p 8080:80 --rm -d php-image
 ```
 
-### Show running containers
+Show running containers
 ```
 docker ps
 ```
 
-### Show all containers (running + stopped)
+Show all containers (running + stopped)
 ```
 docker ps -a
 ```
 
-### Stop container
+Stop container
 ```
 docker stop php-container
 ```
 
-### Remove container
+Remove container
 ```
 docker rm php-container
 ```
 
-### View container logs
+View container logs
 ```
 docker logs php-container
 ```
 
-### "SSH" into the container without a service name
+"SSH" into the container without a service name
 ```
 docker exec -it php-container sh
 ```
 
-### "SSH" into the using the service name (www in our case)
+"SSH" into the using the service name (www in our case)
 ```
 docker-compose exec www sh
 ```
