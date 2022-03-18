@@ -1,6 +1,6 @@
 # Docker presentation
 
-These files here will give you a starting point into your journey experience.
+The purpose of this repository is to have a support for my Docker presentation. These files here will give you a starting point into your journey experience.
 
 The presentation can be found [here](https://docs.google.com/presentation/d/1G3iEeR8QGld2smck6yoGlH2howC3NmzLyclCQjBocTU/edit?usp=sharing). At the moment its in romanian, but will create an english version soon.
 
